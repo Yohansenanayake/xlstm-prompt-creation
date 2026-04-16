@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Prompt Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Music Prompt Generator</h1>
+  <div>
+    <button id="selectFileBtn">Select Input File</button>
+    <div id="selectedFile"></div>
+  </div>
+  <form id="form">
+    <label>Left Bar Position: <input type="number" id="leftBar" min="1" required></label><br><br>
+    <label>Right Bar Position: <input type="number" id="rightBar" min="1" required></label><br><br>
+    <label>Output Filename: <input type="text" id="outputName" placeholder="e.g., prompt_3to5.txt" required></label><br><br>
+    <label>Output Directory: <input type="text" id="outputDir" required> <button type="button" id="selectOutputDirBtn">Browse</button></label><br><br>
+    <button type="submit">Extract and Save</button>
+  </form>
+  <div id="result"></div>
+
+  <!-- File Modal -->
+  <div id="fileModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeFileModal">&times;</span>
+      <h3>Select Input File</h3>
+      <button id="upModal">Up</button>
+      <div>Current Directory: <span id="currentDirModal"></span></div>
+      <label>Search: <input type="text" id="searchModal"></label><br><br>
+      <div id="dirsModal"></div>
+      <div id="filesModal"></div>
+    </div>
+  </div>
+
+  <!-- Dir Modal -->
+  <div id="dirModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeDirModal">&times;</span>
+      <h3>Select Output Directory</h3>
+      <button id="upDirModal">Up</button>
+      <div>Current Directory: <span id="currentDirDirModal"></span></div>
+      <div id="dirsDirModal"></div>
+      <button id="selectDirBtn">Select This Directory</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
